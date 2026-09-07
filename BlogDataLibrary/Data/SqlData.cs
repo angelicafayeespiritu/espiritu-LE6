@@ -2,11 +2,10 @@
 using BlogDataLibrary.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BlogDataLibrary.Data
 {
-    public class SqlData
+    public class SqlData : ISqlData
     {
         private readonly ISqlDataAccess _db;
         private readonly string _connectionStringName = "SqlDb";
@@ -16,67 +15,45 @@ namespace BlogDataLibrary.Data
             _db = db;
         }
 
-        // LOGIN
-        public async Task<UserModel> Authenticate(string username, string password)
+        public UserModel Authenticate(string username, string password)
         {
-            var result = await _db.LoadData<UserModel, dynamic>(
-                "dbo.spUsers_Authenticate",
-                new
-                {
-                    username,
-                    password
-                },
-                _connectionStringName);
+            var result = _db.LoadData<UserModel, dynamic>(
+                "spUsers_Authenticate",
+                new { username, password },
+                _connectionStringName).Result;
 
             return result.FirstOrDefault();
         }
 
-        // REGISTER
         public void Register(string username, string firstName, string lastName, string password)
         {
             _db.SaveData(
-                "dbo.spUsers_Register",
-                new
-                {
-                    userName = username,
-                    firstName,
-                    lastName,
-                    password
-                },
-                _connectionStringName).Wait();
+                "spUsers_Register",
+                new { username, firstName, lastName, password },
+                _connectionStringName);
         }
 
-        // ADD POST
         public void AddPost(PostModel post)
         {
-            _db.SaveData(
-                "spPosts_Insert",
-                new
-                {
-                    userId = post.UserId,
-                    title = post.Title,
-                    body = post.Body,
-                    dateCreated = post.DateCreated
-                },
-                _connectionStringName).Wait();
+            _db.SaveData("spPosts_Insert", post, _connectionStringName);
         }
 
-        // LIST POSTS
-        public List<PostModel> ListPosts()
+        public List<ListPostModel> ListPosts()
         {
-            return _db.LoadData<PostModel, dynamic>(
-                "dbo.spPosts_List",
+            return _db.LoadData<ListPostModel, dynamic>(
+                "spPosts_List",
                 new { },
                 _connectionStringName).Result;
         }
 
-        // SHOW POST DETAILS
-        public PostModel ShowPostDetails(int id)
+        public ListPostModel ShowPostDetails(int id)
         {
-            return _db.LoadData<PostModel, dynamic>(
-                "dbo.spPosts_Details",
-                new { Id = id },
-                _connectionStringName).Result.FirstOrDefault();
+            var results = _db.LoadData<ListPostModel, dynamic>(
+                "spPosts_Detail",
+                new { id = id },
+                _connectionStringName).Result;
+
+            return results.FirstOrDefault();
         }
     }
 }

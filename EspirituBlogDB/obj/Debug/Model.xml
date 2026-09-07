@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="EspirituBlogDB.dll" />
-			<Metadata Name="FileName" Value="C:\USERS\ADMIN\SOURCE\REPOS\ESPIRITULE2\ESPIRITUBLOGDB\OBJ\DEBUG\ESPIRITUBLOGDB.DLL" />
+			<Metadata Name="FileName" Value="C:\USERS\ADMIN\SOURCE\REPOS\ESPIRITULE6\ESPIRITUBLOGDB\OBJ\DEBUG\ESPIRITUBLOGDB.DLL" />
 			<Metadata Name="AssemblyName" Value="EspirituBlogDB" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Users\ADMIN\source\repos\EspirituLE2\EspirituBlogDB\obj\Debug\EspirituBlogDB.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\ADMIN\source\repos\EspirituLE6\EspirituBlogDB\obj\Debug\EspirituBlogDB.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>
@@ -50,7 +50,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[Users].[Id]" />
+								<References Name="[dbo].[Posts].[Id]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -58,7 +58,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[Users]" />
+					<References Name="[dbo].[Posts]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
@@ -69,7 +69,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[Posts].[Id]" />
+								<References Name="[dbo].[Users].[Id]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -77,7 +77,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[Posts]" />
+					<References Name="[dbo].[Users]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
@@ -123,7 +123,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="4" />
+						<AttachedAnnotation Disambiguator="3" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -720,7 +720,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="3" />
+						<AttachedAnnotation Disambiguator="4" />
 					</Element>
 				</Entry>
 				<Entry>

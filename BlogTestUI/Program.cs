@@ -28,7 +28,8 @@ namespace BlogTestUI
             Console.Write("Password : ");
             string password = Console.ReadLine();
 
-            UserModel user = db.Authenticate(username, password).Result;
+            //UserModel user = db.Authenticate(username, password).Result;
+            UserModel user = db.Authenticate(username, password);
 
             return user;
         }
@@ -118,9 +119,11 @@ namespace BlogTestUI
             Console.WriteLine("============= LIST OF POSTS =============");
             Console.WriteLine();
 
-            List<PostModel> posts = db.ListPosts();
+            //List<PostModel> posts = db.ListPosts();
+            List<ListPostModel> posts = db.ListPosts();
 
-            foreach (PostModel post in posts)
+            //foreach (PostModel post in posts)
+            foreach (ListPostModel post in posts)
             {
                 Console.WriteLine($"Post ID : {post.Id}");
                 Console.WriteLine($"Title   : {post.Title}");
@@ -139,7 +142,8 @@ namespace BlogTestUI
             Console.Write("Enter a post ID : ");
             int id = int.Parse(Console.ReadLine());
 
-            PostModel post = db.ShowPostDetails(id);
+            //PostModel post = db.ShowPostDetails(id);
+            ListPostModel post = db.ShowPostDetails(id);
 
             Console.WriteLine();
 
