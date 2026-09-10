@@ -1,0 +1,157 @@
+.main-wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* Deep Black / Dark Hero Card */
+.hero-card {
+  background: linear-gradient(135deg, #090d16 0%, #0f172a 100%);
+  border: 1px solid #1e293b;
+  border-radius: 20px;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 3rem;
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.hero-subtitle {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* Cards Grid Layout */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* Post Cards with Black Top Accents */
+.post-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+}
+
+.post-card-header {
+  height: 6px;
+  background: #090d16;
+}
+
+.post-card-content {
+  padding: 1.75rem;
+}
+
+.post-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.12);
+  border-color: #cbd5e1;
+}
+
+/* Badges & Meta Details */
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.badge-dark {
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: 0.725rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+  border: 1px solid #e2e8f0;
+}
+
+.read-time {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.post-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+  margin-bottom: 0.6rem;
+}
+
+.post-body {
+  color: #475569;
+  font-size: 0.925rem;
+  line-height: 1.6;
+}
+
+/* Card Footer */
+.card-footer {
+  padding: 1rem 1.75rem;
+  background-color: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.avatar-dark {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #090d16;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-id {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.action-link {
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.post-card:hover .action-link {
+  color: #2563eb;
+  gap: 0.5rem;
+}

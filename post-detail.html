@@ -1,0 +1,17 @@
+<div class="detail-wrapper" *ngIf="post">
+  <a routerLink="/" class="back-link">&larr; Back to all posts</a>
+
+  <article class="article-card">
+    <header class="article-header">
+      <h1 class="article-title">{{ post.title }}</h1>
+      <div class="article-meta">
+        <span class="author-badge">By {{ post.userName || 'Author' }}</span>
+        <span *ngIf="post.dateCreated">• {{ post.dateCreated | date:'mediumDate' }}</span>
+      </div>
+    </header>
+
+    <div class="article-content">
+      <p>{{ post.body }}</p>
+    </div>
+  </article>
+</div>

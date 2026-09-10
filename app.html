@@ -1,0 +1,22 @@
+<header class="navbar-wrapper">
+  <nav class="navbar">
+    <a routerLink="/" class="nav-brand">
+      <div class="brand-icon">B</div>
+      <span class="brand-text">BLOG<span class="brand-accent">APP</span></span>
+    </a>
+
+    <div class="nav-menu">
+      <a routerLink="/posts" routerLinkActive="active" class="nav-link">Posts</a>
+      
+      <div class="nav-actions">
+        <a routerLink="/login" class="btn-nav btn-secondary">Log in</a>
+        <a routerLink="/register" class="btn-nav btn-primary">Sign up</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- This renders your active route component (like ListPostsComponent) -->
+<main>
+  <router-outlet></router-outlet>
+</main>
